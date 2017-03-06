@@ -1,0 +1,514 @@
+<mvc:View controllerName="sap.ui.demo.wt.controller.Home" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:cust="sap.ui.demo.wt.control">
+	<VBox >
+		<NavContainer id="navCon" width="100%" height="46em" enableScrolling="false" class="navContainerControl sapUiSmallMarginBottom">
+			<!-- HOME PAGE -->
+			<Page id="p1" title="">
+				<headerContent>
+					<core:Icon src="sap-icon://camera" class="iconSize" size="1rem"/>
+					<core:Icon src="sap-icon://person-placeholder" class="iconSize" size="1rem"/>
+					<core:Icon src="sap-icon://email" class="iconSize" size="1rem"/>
+					<core:Icon src="sap-icon://action-settings" class="iconSize" size="1rem"/>
+				</headerContent>
+				<HeaderContainer>
+					<FlexBox class="sapUiTinyMarginBeginEnd">
+						<items >
+							<core:Icon src="sap-icon://horizontal-bar-chart" class="iconSize" size="1rem"/>
+							<Text text="Vertical" textAlign="Right"/>
+						</items>
+					</FlexBox>
+					<FlexBox class="sapUiTinyMarginBeginEnd">
+						<items >
+							<core:Icon src="sap-icon://product" class="iconSize" size="1rem"/>
+							<Text text="Product Type" textAlign="Right"/>
+						</items>
+					</FlexBox>
+					<FlexBox class="sapUiTinyMarginBeginEnd">
+						<items >
+							<core:Icon src="sap-icon://process" class="iconSize" size="1rem"/>
+							<Text text="Process" textAlign="Right"/>
+						</items>
+					</FlexBox>
+					<FlexBox class="sapUiTinyMarginBeginEnd">
+						<items >
+							<core:Icon src="sap-icon://group" class="iconSize" size="1rem"/>
+							<Text text="ST Family" textAlign="Right"/>
+						</items>
+					</FlexBox>
+					<FlexBox class="sapUiTinyMarginBeginEnd">
+						<items >
+							<core:Icon src="sap-icon://bo-strategy-management" class="iconSize" size="1rem"/>
+							<Text text="MM" textAlign="Right"/>
+						</items>
+					</FlexBox>
+				</HeaderContainer>
+
+				<l:VerticalLayout width="75%">
+					<l:BlockLayout >
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell titleAlignment="Center">
+								<!-- Account info tile -->
+								<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Account Info" press="handleNav">
+									<layoutData>
+										<FlexItemData growFactor="1"/>
+									</layoutData>
+									<customData>
+										<core:CustomData key="target" value="p2"/>
+									</customData>
+									<tileContent>
+										<TileContent>
+											<content>
+												<!-- <FlexBox class="sapUiSmallMarginBeginEnd" direction="Column" alignItems="Center"> -->
+												<!-- <items > -->
+												<core:Icon src="sap-icon://customer" class="iconSize" size="3rem"/>
+												<!-- </items>
+															</FlexBox> -->
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell titleAlignment="Center">
+								<!-- new Account Tile -->
+								<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create New Account" press="handleNav">
+									<layoutData>
+										<FlexItemData growFactor="1"/>
+									</layoutData>
+									<customData>
+										<core:CustomData key="target" value="p3"/>
+									</customData>
+									<tileContent>
+										<TileContent>
+											<content>
+												<!-- <FlexBox class="sapUiSmallMarginBeginEnd" direction="Column" alignItems="Center"> -->
+												<!-- <items > -->
+												<core:Icon src="sap-icon://add-contact" class="iconSize" size="3rem"/>
+												<!-- </items>
+											</FlexBox> -->
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+
+							</l:BlockLayoutCell>
+
+						</l:BlockLayoutRow>
+
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell titleAlignment="Center">
+
+								<!-- Account table Tile -->
+								<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Trial Account Info" press="handleNav">
+									<layoutData>
+										<FlexItemData growFactor="1"/>
+									</layoutData>
+									<customData>
+										<core:CustomData key="target" value="p4"/>
+									</customData>
+									<tileContent>
+										<TileContent>
+											<content>
+												<!-- <FlexBox class="sapUiSmallMarginBeginEnd" direction="Column" alignItems="Center"> -->
+												<!-- <items > -->
+												<core:Icon src="sap-icon://history" class="iconSize" size="3rem"/>
+												<!-- </items>
+											</FlexBox> -->
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+							</l:BlockLayoutCell>
+
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+				<!-- CUSTOM CONTROLLER -->
+				<l:VerticalLayout class="background" width="25%">
+					<l:BlockLayout >
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell titleAlignment="Left">
+								<!-- <Panel  class="background"> -->
+								<Text text="Metrics" class="title"/>
+								<!-- <content> -->
+								<cust:CustomControl title="Total Inventory" number="6,762"
+                                       desktop="89,843" server1="8,394" mobile1="3,443" server2="39,843"
+                                       mobile2="8,843" label1="Desktop" label2="Server" label3="Mobile" icon1="sap-icon://activities" icon2="sap-icon://activities">
+									<!-- <cust:CustomControl></cust:CustomControl> -->
+								</cust:CustomControl>
+								<cust:CustomControl title="Total WOI" number="6.12"
+                                       desktop="89,843" server1="8,394" mobile1="3,443" server2="39,843"
+                                       mobile2="8,843" label1="Desktop" label2="Server" label3="Mobile" icon1="sap-icon://activities" icon2="sap-icon://activities">
+									<!-- <cust:CustomControl></cust:CustomControl> -->
+								</cust:CustomControl>
+								<cust:CustomControl title="Total Dollar Amount" number="$200,762"
+                                       desktop="89,843" server1="8,394" mobile1="3,443" server2="39,843"
+                                       mobile2="8,843" label1="Desktop" label2="Server" label3="Mobile" icon1="sap-icon://activities" icon2="sap-icon://activities">
+									<!-- <cust:CustomControl></cust:CustomControl> -->
+								</cust:CustomControl>
+								<cust:CustomControl title="Total Alerts" number="200"
+                                       desktop="89,843" server1="8,394" mobile1="3,443" server2="39,843"
+                                       mobile2="8,843" label1="Desktop" label2="Server" label3="Mobile" icon1="sap-icon://activities" icon2="sap-icon://activities">
+									<!-- <cust:CustomControl></cust:CustomControl> -->
+								</cust:CustomControl>
+								<!-- </content> -->
+								<!-- </Panel> -->
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+
+			</Page>
+			<!-- ACCOUNT INFO PAGE -->
+			<Page id="p2" title="Account Info" showNavButton="true" navButtonPress="handleNav">
+
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<!-- <Panel> -->
+					<FlexBox class=" sapUiSmallMarginTopBottom" justifyContent="Start">
+						<Label text="ID: " labelFor="" class=" sapUiSmallMargin"/>
+						<Select items="{/users}" id="idSelectedInfo" forceSelection="false" change="setInfo">
+							<core:Item key="{id}" text="{id} | {fName} {lName}"/>
+						</Select>
+					</FlexBox>
+					<!-- </Panel> -->
+				</l:VerticalLayout>
+
+				<!-- FORM -->
+				<VBox class="sapUiSmallMargin">
+					<f:Form editable="true" ariaLabelledBy="Title1">
+						<f:toolbar>
+							<Toolbar >
+								<Title text="General Info" level="H4" titleStyle="H4"/>
+							</Toolbar>
+						</f:toolbar>
+						<f:layout>
+							<f:ResponsiveGridLayout/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer ariaLabelledBy="Title2">
+								<f:formElements>
+									<f:FormElement label="First Name">
+										<f:fields>
+											<Input id="editfName" value="{userData>/fName}" enabled="false" change="inputAdd"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Middle Name">
+										<f:fields>
+											<Input id="editmName" value="{userData>/mName}" enabled="false"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Last Name">
+										<f:fields>
+											<Input id="editlName" value="{userData>/lName}" enabled="false" change="inputAdd"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Birth Date">
+										<f:fields>
+											<DatePicker id="editBirth" value="{userData>/bDate}" enabled="false" valueFormat="yyyyMMdd" displayFormat="short" change="inputAdd" class=""/>
+
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Email">
+										<f:fields>
+											<Input id="editEmail" value="{userData>/email}" enabled="false" change="inputAdd"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+
+					<!-- Loc info -->
+					<f:Form editable="true" ariaLabelledBy="Title2">
+						<f:toolbar>
+							<Toolbar >
+								<Title text="Localization Info" level="H4" titleStyle="H4"/>
+							</Toolbar>
+						</f:toolbar>
+						<f:layout>
+							<f:ResponsiveGridLayout/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer ariaLabelledBy="Title2">
+								<f:formElements>
+
+									<f:FormElement label="Country">
+										<f:fields>
+											<Select items="{/places}" id="countryEdit" forceSelection="false" enabled="false" width="100%" change="getStatesEdit">
+												<core:Item key="{id}" text="{country}" value="{userData>/country}"/>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="State">
+										<f:fields>
+											<Select items='' id="stateEdit" enabled="false" forceSelection="false" width="100%" change="getCitiesEdit">
+												<core:Item key="" text=""/>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="City">
+										<f:fields>
+											<Select items='' id="cityEdit" enabled="false" forceSelection="false" width="100%" change="inputAdd">
+												<core:Item key="" text=""/>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Address Line 1:">
+										<f:fields>
+											<Input id="address1Edit" value="{userData>/address1}" enabled="false" change="inputAdd"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Address Line 2:">
+										<f:fields>
+											<Input id="address2Edit" value="{userData>/address2}" enabled="false"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="ZIP/Postal Code:">
+										<f:fields>
+											<Input id="zipEdit" value="{userData>/zip}" enabled="false" change="inputAdd"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<!-- Account sub -->
+					<f:Form editable="true" ariaLabelledBy="Title3">
+						<f:toolbar>
+							<Toolbar >
+								<Title text="Account Type" level="H4" titleStyle="H4"/>
+							</Toolbar>
+						</f:toolbar>
+						<f:layout>
+							<f:ResponsiveGridLayout/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer ariaLabelledBy="Title2">
+								<f:formElements>
+									<f:FormElement label="Account Type">
+										<f:fields>
+											<Text text="{userData>/account}" id="typeEdit"></Text>
+										</f:fields>
+									</f:FormElement>
+
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</VBox>
+
+				<footer >
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<!-- <core:Icon src="sap-icon://history" class="iconSize" size="3rem"/> -->
+						<Button icon="sap-icon://edit" id="editButton" type="Default" text="Edit" press="enableEdit" enabled="false" ariaDescribedBy="saveButtonDescription genericButtonDescription" class="sapUiSmallMarginBeginEnd">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+						<Button icon="sap-icon://save" id="saveButtonNew" type="Accept" text="Save" press="saveEdit" enabled="false" ariaDescribedBy="saveButtonDescription genericButtonDescription" class="sapUiSmallMarginBeginEnd">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false "/></layoutData>
+						</Button>
+						<Button icon="sap-icon://cancel" text="Cancel" press="" enabled="true" class="sapUiSmallMarginBeginEnd">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+
+			<!--New ACCOUTN  PAGE-->
+			<!-- Asi se accesa al model -->
+			<!-- <f:FormElement label="{userData>/name}"> -->
+
+			<Page id="p3" title="New Account" showNavButton="true" navButtonPress="handleNav">
+				<VBox class="sapUiSmallMargin">
+					<f:Form editable="true" ariaLabelledBy="Title1">
+						<f:toolbar>
+							<Toolbar >
+								<Title text="General Info" level="H4" titleStyle="H4"/>
+							</Toolbar>
+						</f:toolbar>
+						<f:layout>
+							<f:ResponsiveGridLayout/>
+						</f:layout>
+
+						<f:formContainers>
+							<f:FormContainer ariaLabelledBy="Title2">
+								<f:formElements>
+									<f:FormElement label="*ID">
+										<f:fields>
+											<Input id="newId" change="inputAdd" value="{userData>/id}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*First Name">
+										<f:fields>
+											<Input id="newFirstName" change="inputAdd" value="{userData>/fName}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Middle Name">
+										<f:fields>
+											<Input id="newMiddleName" value="{userData>/mName}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*Last Name">
+										<f:fields>
+											<Input id="newLastName" change="inputAdd" value="{userData>/lName}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*Birth Date">
+										<f:fields>
+											<DatePicker id="newBirth" value="{userData>/bDate}" valueFormat="yyyyMMdd" displayFormat="short" change="inputAdd"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*Email">
+										<f:fields>
+											<Input id="newEmail" change="inputAdd" value="{userData>/email}"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+
+					<!-- Loc info -->
+					<f:Form editable="true" ariaLabelledBy="Title2">
+						<f:toolbar>
+							<Toolbar >
+								<Title text="Localization Info" level="H4" titleStyle="H4"/>
+							</Toolbar>
+						</f:toolbar>
+						<f:layout>
+							<f:ResponsiveGridLayout/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer ariaLabelledBy="Title2">
+								<f:formElements>
+
+									<f:FormElement label="*Country">
+										<f:fields>
+											<!-- <Text text="{/places/0}"></Text> -->
+											<Select items="{/places}" id="countryNew" forceSelection="false" width="100%" change="getStatesNew">
+												<core:Item key="{id}" text="{country}" value="{userData>/country}"/>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*State">
+										<f:fields>
+											<Select items='' id="stateNew" enabled="false" forceSelection="false" width="100%" change="getCitiesNew">
+												<core:Item key="" text=""/>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*City">
+										<f:fields>
+											<Select items='' id="cityNew" enabled="false" forceSelection="false" width="100%" change="changeCity">
+												<core:Item key="" text=""/>
+											</Select>
+
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*Address Line 1">
+										<f:fields>
+											<Input id="newAddress1" change="inputAdd" value="{userData>/address1}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Address Line 2">
+										<f:fields>
+											<Input id="newAddress2" value="{userData>/address2}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="*ZIP/Postal Code">
+										<f:fields>
+											<Input id="zip" change="inputAdd" value="{userData>/zip}"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<!-- Account sub -->
+					<f:Form editable="true" ariaLabelledBy="Title3">
+						<f:toolbar>
+							<Toolbar >
+								<Title text="Account" level="H4" titleStyle="H4"/>
+							</Toolbar>
+						</f:toolbar>
+						<f:layout>
+							<f:ResponsiveGridLayout/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer ariaLabelledBy="Title2">
+								<f:formElements>
+									<f:FormElement label="*Account Type">
+										<f:fields>
+											<Select id="typeNew" width="100%" forceSelection="false" change="changeType">
+												<items required="true">
+													<core:Item text="User" key="User"/>
+													<core:Item text="Admin" key="Admin"/>
+													<core:Item text="Test" key="Test"/>
+												</items>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</VBox>
+
+				<footer >
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://save" id="saveNew" type="Accept" text="Save" enabled="false" press="saveNewAccount" ariaDescribedBy="saveButtonDescription genericButtonDescription" class="sapUiSmallMarginBeginEnd">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+						<Button icon="sap-icon://cancel" type="Default" text="Cancel" press="" enabled="true" class="sapUiSmallMarginBeginEnd">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+
+			<!--INFO PAGE-->
+			<Page id="p4" title="Account History" showNavButton="true" navButtonPress="handleNav">
+
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<!-- <Panel> -->
+					<FlexBox class=" sapUiSmallMarginTopBottom" justifyContent="Center">
+						<Label text="ID: " labelFor="" class=" sapUiSmallMargin"/>
+						<Select items="{/users}" id="idSelectedTable" forceSelection="false" change="selectedIdTable">
+							<core:Item key="{id}" text="{id} | {fName} {lName}"/>
+						</Select>
+					</FlexBox>
+
+					<!-- <l:VerticalLayout id="content">
+
+					</l:VerticalLayout> -->
+				</l:VerticalLayout>
+
+				<!-- <l:VerticalLayout class="sapUiContentPadding" width="100%"> -->
+				<!-- </l:VerticalLayout> -->
+				<Table id="itemsTable" inset="false" items="">
+					<columns>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Type"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Date"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Time"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{type}"/>
+								<Text text="{date}"/>
+								<Text text="{time}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Page>
+		</NavContainer>
+	</VBox>
+</mvc:View>
